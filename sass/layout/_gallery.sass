@@ -1,0 +1,148 @@
+// Image gallery
+section .gallery
+  margin: 0 50px
+  @media (max-width: 700px)
+    margin: 0px
+
+.grid
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(177px, 1fr))
+  grid-gap: 20px
+  align-items: stretch
+  justify-items: center
+
+.gallery img
+  max-width: 100%
+  width: 216px
+  height: 216px
+  filter: grayscale(100%)
+  transition: 0.7s
+  @media (max-width: 760px)
+    width: 370px
+    height: 300px
+
+.gallery img:hover
+  filter: grayscale(0)
+  transform: scale(1.05)
+  cursor: pointer
+
+.gallery h5, p
+  margin: 0
+  text-align: left
+
+.gallery h5
+  font-size: 16px
+  color: $main
+
+.gallery p
+  color: $text-description
+  padding-bottom: 40px
+  @media (max-width: 415px)
+    padding-bottom: 10px
+
+// Image gallery modal
+.modal
+  display: none
+  position: fixed
+  z-index: 1
+  padding-top: 50px
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  background-color: rgb(0,0,0)
+  background-color: rgba(0,0,0,0.9)
+  @media(max-width: 413px)
+    padding-top: 65px
+
+.modal-content
+  margin: auto
+  display: block
+  width: 80%
+  max-width: 400px
+  @media(max-width: 413px)
+    width: 90%
+
+#imgName
+  margin: auto
+  display: block
+  width: 80%
+  max-width: 500px
+  text-align: center
+  color: #ccc
+  padding: 10px 0
+  height: 50px
+
+#imgDesc
+  margin: auto
+  display: block
+  width: 80%
+  max-width: 550px
+  text-align: center
+  color: #ccc
+  padding: 10px 0
+  height: 100px
+
+.modal-content, .arrowGallery, #prev, #next, #imgName, #imgDesc
+  -webkit-animation-name: zoom
+  -webkit-animation-duration: 0.6s
+  animation-name: zoom
+  animation-duration: 0.6s
+
+@-webkit-keyframes zoom
+  from
+    -webkit-transform: scale(0)
+  to
+    -webkit-transform: scale(1)
+
+@keyframes zoom
+  from
+    transform: scale(0)
+  to
+    transform: scale(1)
+
+.close
+  position: absolute
+  top: 15px
+  right: 35px
+  color: #f1f1f1
+  font-size: 40px
+  font-weight: bold
+  transition: 0.3s
+  &:hover, &:focus
+    color: #bbb
+    text-decoration: none
+    cursor: pointer
+  @media(max-width: 413px)
+    top: 0
+    right: 15px
+
+#prev
+  font-size: 2rem
+  color: $white
+  margin-right: 2rem
+  cursor: pointer
+  &:hover
+     color: darken($white, 20%)
+  @media(max-width: 420px)
+    font-size: 1.5rem
+
+#next
+  font-size: 2rem
+  color: $white
+  cursor: pointer
+  &:hover
+    color: darken($white, 20%)
+  @media(max-width: 420px)
+    font-size: 1.5rem
+
+#myModal .arrowFlex
+  display: inline-flex
+
+.goToComments
+  text-align: right
+  margin-right: 50px
+  @media(max-width: 700px)
+    margin-right: 0px
+    text-align: center

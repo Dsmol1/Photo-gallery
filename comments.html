@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Photo gallery</title>
+</head>
+<body class="container fadeIn">
+  <!-- Header
+  ===================================== -->
+  <header class="comment-header">
+    <div class="container-header">
+      <h1>H1 - Test</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, suscipit, minus. Deserunt doloremque vel numquam possimus amet molestias necessitatibus consequuntur soluta, fugit nobis non sapiente veniam provident esse magnam incidunt obcaecati velit. Nisi, fuga minus nemo nihil cupiditate voluptates laudantium.</p>
+    </div>
+  </header>
+  <div class="backToGallery"><a href="index.html"><b>Back to gallery</b></a>
+</div>
+
+  <!-- Photo slideshow
+  ===================================== -->
+  <section>
+    <div class="wrap">
+      <div id="arrow-left" class="arrow"></div>
+      <div id="slider">
+
+        <div class="slide slide1">
+          <div class="slide-content">
+            <span>1/8</span>
+          </div>
+        </div>
+
+        <div class="slide slide2">
+          <div class="slide-content">
+            <span>2/8</span>
+          </div>
+        </div>
+
+        <div class="slide slide3">
+          <div class="slide-content">
+            <span>3/8</span>
+          </div>
+        </div>
+
+        <div class="slide slide4">
+          <div class="slide-content">
+            <span>4/8</span>
+          </div>
+        </div>
+
+        <div class="slide slide5">
+          <div class="slide-content">
+            <span>5/8</span>
+          </div>
+        </div>
+
+        <div class="slide slide6">
+          <div class="slide-content">
+            <span>6/8</span>
+          </div>
+        </div>
+
+        <div class="slide slide7">
+          <div class="slide-content">
+            <span>7/8</span>
+          </div>
+        </div>
+
+        <div class="slide slide8">
+          <div class="slide-content">
+            <span>8/8</span>
+          </div>
+        </div>
+
+      </div>
+      <div id="arrow-right" class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- Comment area
+  ===================================== -->
+  <section class="container-comment">
+    <div id="commentArea">
+      <p><b>Comments:</b></p>
+    </div>
+
+    <div>
+      <hr>
+    </div>
+
+    <form method="post" id="commentForm">
+      <div id="commentName">
+        <label for="cName">Name:</label>
+        <input id="cName"type="text" placeholder="Name" value="" required>
+      </div>
+
+      <div id="commentEmail">
+        <label for="cEmail">Email:</label>
+        <input id="cEmail" type="email" placeholder="Email" value="" required>
+      </div>
+
+      <div id="comment">
+        <label for="cComment">Comment:</label>
+        <textarea id="cComment" name="" cols="25" rows="5" placeholder="Optional (max 50 chars)" value="" maxlength="150" required></textarea>
+      </div>
+
+      <div id="addComment">
+        <input id="addC" class="submit" type="button" value="Send" onclick="escapeHtmlComment();">
+      </div>
+    </form>
+  </section>
+</body>
+<script src="js/gallery.js"></script>
+<script src="js/addComment.js"></script>
+<script src="js/htmlEscape.js"></script>
+</html>
