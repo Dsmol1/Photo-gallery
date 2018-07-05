@@ -1,6 +1,5 @@
 // Image gallery
 section .gallery
-  margin: 0 50px
   @media (max-width: 700px)
     margin: 0px
 
@@ -17,10 +16,12 @@ section .gallery
   height: 216px
   filter: grayscale(100%)
   transition: 0.7s
-  @media (max-width: 760px)
-    width: 370px
-    height: 300px
+  @media (max-width: 1024px)
     filter: grayscale(0)
+    @media (max-width: 760px)
+      width: 320px
+      height: 216px
+      filter: grayscale(0)
 
 .gallery img:hover
   filter: grayscale(0)
@@ -33,13 +34,16 @@ section .gallery
 
 .gallery h5
   font-size: 16px
-  color: $main
+  color: $black
+  line-height: 24px
+  font-weight: $font-bold
+  margin-top: -1px
 
 .gallery p
   color: $text-description
-  padding-bottom: 40px
-  @media (max-width: 415px)
-    padding-bottom: 10px
+  font-size: 12px
+  line-height: 1.3
+  padding-bottom: 20px
 
 // Image gallery modal
 .modal
@@ -84,6 +88,69 @@ section .gallery
   color: #ccc
   padding: 10px 0
   height: 100px
+
+.galleryUnderline .line
+  margin-top: 16px
+  margin-bottom: 30px
+
+.paginate-container .pagination
+  display: flex
+  justify-content: center
+  font-weight: $font-bold
+  font-size: 16px
+
+.leftTest
+  width: 14px
+  height: 18px
+  border-top: 10px solid transparent
+  border-bottom: 10px solid transparent
+  border-right: 15px solid $blue
+  margin-right: 20px
+
+.rightTest
+  width: 14px
+  height: 18px
+  border-top: 10px solid transparent
+  border-bottom: 10px solid transparent
+  border-left: 15px solid $blue
+  margin-left: 20px
+
+.alignCenter
+  align-self: center
+
+.pagination a:nth-child(n+3):nth-child(-n+4)
+  font-size: 16px
+  color: $text-description
+  width: 30px
+  height: 30px
+  border-radius: 50%
+  border: 2px solid $pagination-border
+  transition: background 0.5s ease
+  &:hover
+    border: 2px solid $blue
+    background: $blue
+    color: $white
+
+.pagination a:nth-child(n+2):nth-child(-n+3)
+  margin-right: 20px
+
+.pagination a:nth-child(2)
+  color: $white
+  background: $blue
+  width: 30px
+  height: 30px
+  border-radius: 50%
+  transition: background 0.5s ease
+  &:hover
+    background: lighten($blue, 10%)
+
+.pagination p
+  padding-left: 8px
+  padding-top: 2px
+
+.pagination .currentPage
+  padding-left: 10px
+  padding-top: 4px
 
 .modal-content, .arrowGallery, #prev, #next, #imgName, #imgDesc
   -webkit-animation-name: zoom

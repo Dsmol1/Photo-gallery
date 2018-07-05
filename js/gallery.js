@@ -1,7 +1,7 @@
   // Variables
   let sliderImages = document.querySelectorAll('.slide');
-  let arrowLeft = document.querySelector('#arrow-left');
-  let arrowRight = document.querySelector('#arrow-right');
+  let arrowLeft = document.querySelector('#arrow-container-left');
+  let arrowRight = document.querySelector('#arrow-container-right');
   let current = 0;
 
   // Clear all images
@@ -46,5 +46,5 @@
     }
     slideRight();
   });
-  
+
   startSlide();

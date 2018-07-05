@@ -1,19 +1,21 @@
 .backToGallery
   text-align: right
-  
+
 // Image slider
 #slider,
 .wrap,
 .slide-content
   margin: 0
   padding: 0
-  font-family: Arial, Helvetica, sans-serif
+  font-family: $font-stack
   width: 100%
-  height: 60vh
+  height: 240px
   overflow-x: hidden
 
 .wrap
   position: relative
+  max-height: 240px
+  margin-top: 27px
   margin-bottom: 40px
 
 .slide
@@ -22,7 +24,7 @@
   background-repeat: no-repeat
 
 .slide1
-  background-image: url("../images/2.png")
+  background-image: url("../images/sliderPhoto.svg")
 .slide2
   background-image: url("../images/3.png")
 .slide3
@@ -60,23 +62,40 @@
   margin-top: -35px
   width: 0
   height: 0
-  border-style: solid
+
+#arrow-container-left, #arrow-container-right
+  width: 50px
+  height: 50px
+  display: flex
+  transition: background 0.5s ease
+  background: $white
+  border-style: none
+  &:hover
+    background: darken($white, 10%)
+
+#arrow-container-left
+  left: 10px
+
+#arrow-container-right
+  right: 10px
 
 #arrow-left
-  border-width: 30px 40px 30px 0
-  border-color: transparent $black transparent transparent
-  left: 0
-  margin-left: 30px
-  &:hover
-    border-color: transparent lighten($black, 20%) transparent transparent
+  align-self: center
+  margin: 0 auto
+  width: 0
+  height: 0
+  border-top: 11px solid transparent
+  border-bottom: 11px solid transparent
+  border-right: 18px solid $black
 
 #arrow-right
-  border-width: 30px 0 30px 40px
-  border-color: transparent transparent transparent $black
-  right: 0
-  margin-right: 30px
-  &:hover
-    border-color: transparent transparent transparent lighten($black, 20%)
+  align-self: center
+  margin: 0 auto
+  width: 0
+  height: 0
+  border-top: 11px solid transparent
+  border-bottom: 11px solid transparent
+  border-left: 18px solid $black
 
 @keyframes slide-right
   0%
@@ -96,17 +115,33 @@
     transform: translateX(100%)
 
 // Comment area
+#commentArea
+  margin-bottom: 10px
+
+#commentArea > p
+  color: $black
+  font-size: 14px
+  font-weight: $font-bold
+  line-height: 24px
+  margin-top: -6px
+  margin-bottom: -12px
+
 #commentForm
   text-align: left
   display: grid
+  grid-gap: 20px
   grid-template-areas: "name email" "comment comment" ". addComment"
+  @media(max-width:413px)
+    grid-template-areas: "name email" "comment comment" "addComment addComment"
+
+  margin-top: 35px
 
 #commentName, #commentEmail
   display: inline-block
 
 #commentName
   grid-area: name
-  width: 90%
+  width: 100%
 
 #commentEmail
   grid-area: email
@@ -123,20 +158,39 @@
   display: grid
   grid-template-columns: 80px 100px 100px
   grid-template-areas: "avatar . ." "avatar name name" "avatar comment comment" "avatar . ."
-  margin-top: 15px
+  margin-top: 21px
+
+#commentArea .commentBox:nth-child(n+4)
+  margin-top: 6px
+
+#commentArea .commentBox:nth-child(n+5)
+  margin-top: 12px
+
+.dynamicFix
+  margin-top: 18px
+  margin-bottom: -3px
+
+.lineFix
+  margin-top: 16px
+
 .cName
   font-weight: $font-bold
+  color: $black
+  font-size: 14px
+  line-height: 24px
+  margin-bottom: -1px
 
 .cComment
   font-size: 13px
   color: $text-comment
+  line-height: 24px
+  margin-bottom: 6px
 
 .avatar
   border-radius: 50%
-  width: 50px
-  height: 50px
-  vertical-align: sub
-  // margin-top: 15px
+  width: 60px
+  height: 60px
+  vertical-align: text-top
 
 .gridAv
   grid-area: avatar
@@ -146,3 +200,36 @@
 
 .gridCo
   grid-area: comment
+
+#commentForm input
+  width: 100%
+  margin-bottom: 0
+
+#commentForm textarea
+  width: 100%
+  height: 94px
+  margin-top: 9px
+  padding-left: 10px
+  font-size: 14px
+
+#cName
+  margin-top: 8px
+
+#cEmail
+  margin-top: 8px
+
+#comment
+  margin-top: -6px
+
+#addComment #addC
+ margin-top: 0
+ border: none
+ text-transform: uppercase
+ color: $white
+ font-weight: $font-bold
+ line-height: 24px
+ background-color: $blue
+ cursor: pointer
+ transition: background 0.5s ease
+ &:hover
+   background-color: lighten($blue, 10%)

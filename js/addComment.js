@@ -10,8 +10,8 @@ let avatar = "src='images/avatar.png' class='avatar'";
 function render(data){
   let div = document.createElement('div');
   div.className = "commentBox fadeIn";
-  div.innerHTML = "<div class='gridAv'><img "+data.Image+"></div>"+
-                  "<div class='gridNa'><p class='cName'>"+data.cName+"</p></div>"+
+  div.innerHTML = "<div class='gridAv avatar'><img "+data.Image+" class='avatar'></div>"+
+                  "<div class='gridNa dynamicFix'><p class='cName'>"+data.cName+"</p></div>"+
                   // "<div class='cEmail'>"+data.cEmail+"</div>"+
                   "<div class='gridCo'><p class='cComment'>"+data.cComment+"</p></div>";
 
@@ -56,7 +56,7 @@ window.onload = function(){
       alert("Comment required");
       return;
     }
-  
+
     comments.push(addObj);
     localStorage.commentData = JSON.stringify(comments);
     render(addObj);

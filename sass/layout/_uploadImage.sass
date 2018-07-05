@@ -2,50 +2,95 @@
 .upload
   text-align: left
 
-input, textarea
-  border: 1px solid $dark-grey
+#form label:first-child
+  margin-top: -5px
+  margin-bottom: -7px
 
-input
-  margin: 10px 0
+#form label:nth-child(3)
+  margin-top: -4px
+  margin-bottom: -7px
 
-textarea
-  margin-top: 10px
+#form label:nth-child(5)
+  margin-top: -15px
+  margin-bottom: -7.5px
 
-#browse
-  width: 73%
-  display: inline-block
-
-#loadFilesXml
-  width: 30.1%
-  display: inline-block
-  margin-left: -19px
-  border-top-left-radius: 0
-  border-bottom-left-radius: 0
-  border: none
-  background: $green
-  color: $white
-  text-transform: uppercase
-  cursor: pointer
+#form #name
+  width: 100%
+  padding-left: 9px
   font-size: 14px
-  font-weight: $font-bold
-  padding: 11.4px 7px 7.5px 7px
-  &:hover
-    background: darken($green, 15%)
 
-.submit
-  width: 50%
+#form input, textarea, #commentForm input
+  height: 34px
+  border-radius: 10px
+  border: 1px solid $input-border
+  background-color: $input-background
+  outline: none
+
+#form textarea
+  height: 94px
+  width: 100%
+  margin: 15px 0 19px 0
+
+#form textarea, #commentForm input
+  font-size: 14px
+  padding-left: 9px
+
+#form input:nth-child(6)::-webkit-input-placeholder
+  padding-left: 9px
+
+#form #browse
+  border-radius: 0
+  border-bottom-left-radius: 10px
+  border-top-left-radius: 10px
+  width: 74.7%
+  vertical-align: bottom
+  margin-bottom: 40px
+
+#form #loadFilesXml
+  border-radius: 0
+  border-bottom-right-radius: 10px
+  border-top-right-radius: 10px
+  border: none
+  background-color: $green
+  width: 25.3%
+  cursor: pointer
+  margin-left: -6px
+  font-size: 14px
+  text-transform: uppercase
+  line-height: 24px
+  font-weight: $font-bold
+  color: $white
+  padding: 0
+  margin-bottom: 40px
+  @media(max-width: 413px)
+    font-size: 11.5px
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+  font-family: $font-stack, Arial, Helvetica, sans-serif
+  font-weight: $font-normal
+  font-size: 14px
+  line-height: 24px
+
+#form #submit
+  border: none
+  width: 47.9%
+  @media(max-width:413px)
+    width: 100%
   text-transform: uppercase
   font-size: 16px
   font-weight: $font-bold
   color: $white
   background: $blue
   cursor: pointer
-  margin-left: auto
+  margin: 0 0 0 auto
+  transition: background 0.5s ease
   &:hover
-    background-color: darken($blue, 10%)
+   background-color: lighten($blue, 10%)
+
+
+.upload .line
+  margin-top: 30px
+  margin-bottom: 41px
 
 #addComment .submit
   width: 100%
-
-hr
-  margin: 30px 0 40px 0

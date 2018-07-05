@@ -7,23 +7,23 @@
   <link rel="stylesheet" href="css/main.css">
   <title>Photo gallery</title>
 </head>
-<body class="container fadeIn">
+<body class="comment-container fadeIn">
   <!-- Header
   ===================================== -->
   <header class="comment-header">
     <div class="container-header">
       <h1>H1 - Test</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, suscipit, minus. Deserunt doloremque vel numquam possimus amet molestias necessitatibus consequuntur soluta, fugit nobis non sapiente veniam provident esse magnam incidunt obcaecati velit. Nisi, fuga minus nemo nihil cupiditate voluptates laudantium.</p>
+      <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, suscipit, minus. Deserunt doloremque vel numquam possimus amet molestias necessitatibus consequuntur soluta, fugit nobis non sapiente veniam provident esse magnam incidunt obcaecati velit. Nisi, fuga minus nemo nihil cupiditate voluptates laudantium.</h2>
     </div>
   </header>
-  <div class="backToGallery"><a href="index.html"><b>Back to gallery</b></a>
 </div>
 
   <!-- Photo slideshow
   ===================================== -->
   <section>
     <div class="wrap">
-      <div id="arrow-left" class="arrow"></div>
+        <div id="arrow-container-left" class="arrow"><div id="arrow-left"></div></div>
+        <div id="arrow-container-right" class="arrow"><div id="arrow-right"></div></div>
       <div id="slider">
 
         <div class="slide slide1">
@@ -75,7 +75,6 @@
         </div>
 
       </div>
-      <div id="arrow-right" class="arrow"></div>
     </div>
   </section>
 
@@ -84,11 +83,20 @@
   <section class="container-comment">
     <div id="commentArea">
       <p><b>Comments:</b></p>
-    </div>
+      <div class="commentBox fadeIn">
+        <div class='gridAv'><img src="images/avatarJohn.png" class="avatar"></div>
+        <div class='gridNa'><p class='cName'>John Johnson</p></div>
+        <div class='gridCo'><p class='cComment'>Nice photo!!</p></div>
+      </div>
 
-    <div>
-      <hr>
+      <div class="commentBox fadeIn">
+        <div class='gridAv'><img src="images/avatarJames.png"></div>
+        <div class='gridNa'><p class='cName'>James Morrison</p></div>
+        <div class='gridCo'><p class='cComment'>Thanks, John.</p></div>
+      </div>
     </div>
+    <div class="line lineFix"></div>
+
 
     <form method="post" id="commentForm">
       <div id="commentName">
@@ -115,4 +123,5 @@
 <script src="js/gallery.js"></script>
 <script src="js/addComment.js"></script>
 <script src="js/htmlEscape.js"></script>
+<a href="index.html" style="float:right; text-transform:uppercase; font-size:14px; color:green">Back to gallery</a>
 </html>
